@@ -14,11 +14,13 @@ import java.time.LocalDate;
 public class BaseEntity {
     private LocalDate updatedAt;
     private LocalDate createdAt;
+    private boolean isDeleted;
 
     @PrePersist
     public void prePersist() {
         setCreatedAt(LocalDate.now());
         setUpdatedAt(LocalDate.now());
+        isDeleted = false;
     }
     @PreUpdate
     public void preUpdate() {
