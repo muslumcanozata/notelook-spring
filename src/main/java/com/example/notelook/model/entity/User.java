@@ -6,7 +6,7 @@ import lombok.*;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Set;
-
+import java.util.List;
 
 @Getter
 @Setter
@@ -27,6 +27,9 @@ public class User extends BaseEntity implements UserDetails {
     private boolean isEnabled;
     private boolean accountNonLocked;
     private boolean credentialsNonExpired;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Note> notes;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @JoinTable(name = "authorities", joinColumns = @JoinColumn(name = "user_id"))
