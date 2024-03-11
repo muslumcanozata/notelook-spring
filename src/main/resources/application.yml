@@ -1,13 +1,3 @@
 spring:
-  datasource:
-    url: jdbc:postgres://shzimmru:LQ2ITDb5ack_SSfi631cRyDeCRj4KEev@flora.db.elephantsql.com/shzimmru
-    username: shzimmru
-    password: LQ2ITDb5ack_SSfi631cRyDeCRj4KEev
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+  profiles:
+    active: dev
