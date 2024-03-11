@@ -25,7 +25,7 @@ public class AuthController {
         return ResponseEntity.ok().body("Hello World!");
     }
 
-    @PostMapping("")
+    @PostMapping("/sign-up")
     public ResponseEntity<User> signUp(@RequestBody CreateUserRequest request) {
         User user = service.signUp(request);
         if (user == null) {
